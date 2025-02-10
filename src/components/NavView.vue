@@ -5,7 +5,8 @@ import { ref, watch, defineProps, onMounted, computed } from "vue";
 // const { city } = defineProps(["city"]);
 const props = defineProps(["city", "fetch"]);
 const weather = ref(null);
-const apiKey = "4da88cc82740cb43b04b7402c1f8d2a9";
+const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
+const apiUrl = import.meta.env.VITE_API_URL;
 
 const errorMessage = ref("");
 
@@ -21,7 +22,7 @@ const getWeather = async () => {
   }
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`
+      `${apiUrl}weather?q=${props.city}&appid=${apiKey}&units=metric`
     );
     weather.value = response.data;
     errorMessage.value = "";
