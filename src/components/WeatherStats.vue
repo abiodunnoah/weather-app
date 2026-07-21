@@ -1,7 +1,7 @@
 <script setup>
-import { useWeather } from '@/store/weather'
+import { useWeather } from "@/store/weather";
 
-const { humidity, windSpeed, visibility } = useWeather()
+const { humidity, windSpeed, visibility } = useWeather();
 </script>
 
 <template>

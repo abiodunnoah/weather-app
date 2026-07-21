@@ -1,9 +1,9 @@
 <script setup>
-import { useWeather } from '@/store/weather'
-import CurrentWeather from './CurrentWeather.vue'
-import WeatherStats from './WeatherStats.vue'
+import { useWeather } from "@/store/weather";
+import CurrentWeather from "./CurrentWeather.vue";
+import WeatherStats from "./WeatherStats.vue";
 
-const { isLoading, weatherData, error, hasSearched } = useWeather()
+const { isLoading, weatherData, error, hasSearched } = useWeather();
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup>
-import { useWeather } from '@/store/weather'
+import { useWeather } from "@/store/weather";
 
 const {
   weatherData,
@@ -7,13 +7,15 @@ const {
   feelsLike,
   weatherDescription,
   weatherIcon,
-  currentDate
-} = useWeather()
+  currentDate,
+} = useWeather();
 </script>
 
 <template>
   <div class="location-section">
-    <h2 class="city-name">{{ weatherData.name }}, {{ weatherData.sys.country }}</h2>
+    <h2 class="city-name">
+      {{ weatherData.name }}, {{ weatherData.sys.country }}
+    </h2>
     <p class="date-display">{{ currentDate }}</p>
   </div>
 
