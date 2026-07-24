@@ -3,7 +3,7 @@ import { useWeather } from "@/store/weather";
 import CurrentWeather from "./CurrentWeather.vue";
 import WeatherStats from "./WeatherStats.vue";
 
-const { isLoading, weatherData, error, hasSearched } = useWeather();
+const { isLoading, weatherData, error } = useWeather();
 </script>
 
 <template>
@@ -99,5 +99,22 @@ const { isLoading, weatherData, error, hasSearched } = useWeather();
 
 .fade-in {
   animation: fadeIn var(--transition-normal) ease forwards;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 </style>

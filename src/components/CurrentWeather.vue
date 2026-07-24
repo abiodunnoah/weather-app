@@ -14,7 +14,7 @@ const {
 <template>
   <div class="location-section">
     <h2 class="city-name">
-      {{ weatherData.name }}, {{ weatherData.sys.country }}
+      {{ weatherData.name ?? "Unknown" }}, {{ weatherData.sys?.country ?? "" }}
     </h2>
     <p class="date-display">{{ currentDate }}</p>
   </div>
@@ -114,6 +114,16 @@ const {
 
 .float {
   animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 480px) {
